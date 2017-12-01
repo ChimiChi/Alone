@@ -32,8 +32,7 @@ class TileA extends FlxSprite
 		else 
 		{
 			estadoB;
-		}	
-		
+		}		
 		if (estadoA == true)
 			loadGraphic(AssetPaths.tilespuzzleB__png, 94, 94);
 		if (estadoB == true)
@@ -46,8 +45,7 @@ class TileA extends FlxSprite
 		
 		if (FlxG.overlap(Global.player, this))
 		{
-			choca = true;
-			
+			choca = true;	
 		}	
 		else
 		{
@@ -57,15 +55,6 @@ class TileA extends FlxSprite
 		switchState();
 		super.update(elapsed);	
 		
-		
-		if (Global.contEstadoA == 72 && Global.contEstadoB == 0)
-		{
-			loadGraphic(AssetPaths.splash__png, 640, 480);
-		}
-		else if (Global.contEstadoB == 72 && Global.contEstadoA == 0)
-		{
-			loadGraphic(AssetPaths.splash__png, 640, 480);
-		}
 	}
 	
 	private function switchState():Void
@@ -77,7 +66,6 @@ class TileA extends FlxSprite
 			{	
 				loadGraphic(AssetPaths.tilespuzzle__png, 94, 94);
 				estadoB = true;
-				Global.contEstadoB ++;
 				estadoA = false;
 				changedState = false;
 				
@@ -88,13 +76,19 @@ class TileA extends FlxSprite
 			{
 				loadGraphic(AssetPaths.tilespuzzleB__png, 94, 94);
 				estadoA = true;
-				Global.contEstadoA ++;
 				estadoB = false;
 				changedState = false;
 			}
 		}	
 	}
-
 	
+	public function getEstadoA():Bool
+	{
+		return estadoA;
+	}
 	
+	public function getEstadoB():Bool
+	{
+		return estadoB;
+	}
 }

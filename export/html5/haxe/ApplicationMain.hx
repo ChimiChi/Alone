@@ -38,7 +38,27 @@ class ApplicationMain {
 		types.push (lime.Assets.AssetType.TEXT);
 		
 		
+		urls.push ("assets/images/boulder.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/checkpoint.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/door.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
 		urls.push ("assets/images/nyasheet.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/reset.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/splash.png");
 		types.push (lime.Assets.AssetType.IMAGE);
 		
 		
@@ -51,6 +71,10 @@ class ApplicationMain {
 		
 		
 		urls.push ("assets/images/tilespuzzleB.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/trigger.png");
 		types.push (lime.Assets.AssetType.IMAGE);
 		
 		
@@ -147,7 +171,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "157",
+			build: "421",
 			company: "Chimi",
 			file: "Alone",
 			fps: 60,
