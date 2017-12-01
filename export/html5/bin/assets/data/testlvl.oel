@@ -209,7 +209,7 @@
     <water id="242" x="0" y="640" />
     <water id="243" x="64" y="640" />
     <water id="244" x="64" y="704" />
-    <player id="0" x="4896" y="784" width="59" height="50" />
+    <player id="0" x="128" y="528" width="59" height="50" />
     <water id="226" x="1088" y="256" />
     <water id="245" x="1152" y="256" />
     <water id="246" x="1216" y="256" />

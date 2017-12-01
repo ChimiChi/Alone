@@ -153,6 +153,7 @@ class PlayState extends FlxState
 	{
 		entitiesRespawn();
 		FlxG.collide(tilemap, Global.player);
+		Global.player.pixelPerfectPosition = false;
 		super.update(elapsed);           
 		
 		

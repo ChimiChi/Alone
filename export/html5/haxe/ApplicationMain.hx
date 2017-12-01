@@ -171,7 +171,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "421",
+			build: "438",
 			company: "Chimi",
 			file: "Alone",
 			fps: 60,
@@ -191,7 +191,7 @@ class ApplicationMain {
 					hardware: false,
 					height: 480,
 					parameters: "{}",
-					resizable: false,
+					resizable: true,
 					stencilBuffer: true,
 					title: "Alone",
 					vsync: true,

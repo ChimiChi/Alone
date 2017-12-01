@@ -92,7 +92,7 @@ ApplicationMain.init = function() {
 	}
 };
 ApplicationMain.main = function() {
-	ApplicationMain.config = { build : "421", company : "Chimi", file : "Alone", fps : 60, name : "Alone", orientation : "", packageName : "com.example.myapp", version : "0.0.1", windows : [{ antialiasing : 0, background : 0, borderless : false, depthBuffer : false, display : 0, fullscreen : false, hardware : false, height : 480, parameters : "{}", resizable : false, stencilBuffer : true, title : "Alone", vsync : true, width : 640, x : null, y : null}]};
+	ApplicationMain.config = { build : "438", company : "Chimi", file : "Alone", fps : 60, name : "Alone", orientation : "", packageName : "com.example.myapp", version : "0.0.1", windows : [{ antialiasing : 0, background : 0, borderless : false, depthBuffer : false, display : 0, fullscreen : false, hardware : false, height : 480, parameters : "{}", resizable : true, stencilBuffer : true, title : "Alone", vsync : true, width : 640, x : null, y : null}]};
 };
 ApplicationMain.start = function() {
 	var hasMain = false;
@@ -6155,6 +6155,7 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 	,update: function(elapsed) {
 		this.entitiesRespawn();
 		flixel_FlxG.overlap(this.tilemap,Global.player,null,flixel_FlxObject.separate);
+		Global.player.pixelPerfectPosition = false;
 		flixel_FlxState.prototype.update.call(this,elapsed);
 	}
 	,entitiesRespawn: function() {
@@ -6518,28 +6519,27 @@ TileA.prototype = $extend(flixel_FlxSprite.prototype,{
 		}
 		this.switchState();
 		flixel_FlxSprite.prototype.update.call(this,elapsed);
-		if(Global.contEstadoA == 72 && Global.contEstadoB == 0) {
-			this.loadGraphic("assets/images/splash.png",null,640,480);
-		} else if(Global.contEstadoB == 72 && Global.contEstadoA == 0) {
-			this.loadGraphic("assets/images/splash.png",null,640,480);
-		}
 	}
 	,switchState: function() {
 		if(this.choca == true) {
 			if(this.estadoA == true && this.changedState == true) {
 				this.loadGraphic("assets/images/tilespuzzle.png",null,94,94);
 				this.estadoB = true;
-				Global.contEstadoB++;
 				this.estadoA = false;
 				this.changedState = false;
 			} else if(this.estadoB == true && this.changedState == true) {
 				this.loadGraphic("assets/images/tilespuzzleB.png",null,94,94);
 				this.estadoA = true;
-				Global.contEstadoA++;
 				this.estadoB = false;
 				this.changedState = false;
 			}
 		}
+	}
+	,getEstadoA: function() {
+		return this.estadoA;
+	}
+	,getEstadoB: function() {
+		return this.estadoB;
 	}
 	,__class__: TileA
 });
